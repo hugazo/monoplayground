@@ -35,12 +35,12 @@ importers:
       eslint:
         specifier: ^9.9.1
         version: 9.10.0(jiti@1.21.6)
+      monoplayground:
+        specifier: workspace:^
+        version: link:../..
       nuxt:
         specifier: ^3.13.0
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.5.5)(eslint@9.10.0(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.21.3)(terser@5.32.0)(typescript@5.6.2)(vite@5.4.5(@types/node@22.5.5)(terser@5.32.0))
-      typescript:
-        specifier: ^5.6.2
-        version: 5.6.2
       vue:
         specifier: latest
         version: 3.5.6(typescript@5.6.2)
