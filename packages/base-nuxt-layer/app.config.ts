@@ -1,6 +1,11 @@
 export default defineAppConfig({
-  myLayer: {
-    name: 'Hello from Nuxt layer',
+  eslint: {
+    config: {
+      stylistic: {
+        // Improves readability on multi line nested functions such as TRPC
+        semi: true,
+      },
+    },
   },
 });
 

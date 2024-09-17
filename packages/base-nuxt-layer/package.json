@@ -1,5 +1,5 @@
 {
-  "name": "my-nuxt-layer",
+  "name": "@monoplayground/base-layer",
   "type": "module",
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
@@ -11,7 +11,7 @@
     "preview": "nuxt preview .playground",
     "lint": "eslint ."
   },
-  "devDependencies": {
+  "dependencies": {
     "@nuxt/eslint": "latest",
     "eslint": "^9.9.1",
     "nuxt": "^3.13.0",
