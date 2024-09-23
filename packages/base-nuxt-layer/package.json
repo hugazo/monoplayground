@@ -13,9 +13,9 @@
   },
   "dependencies": {
     "@nuxt/eslint": "latest",
-    "eslint": "^9.9.1",
+    "eslint": "^9.11.1",
     "monoplayground": "workspace:^",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.13.2",
     "vue": "latest"
   }
 }
