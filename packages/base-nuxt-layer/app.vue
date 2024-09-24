@@ -1,18 +1,7 @@
 <template>
-  <div class="excaliboard">
-    <ExcalidrawBoard />
+  <div class="flex justify-center align-center h-screen">
+    <ExcalidrawBoard
+      theme="dark"
+    />
   </div>
 </template>
-
-<script setup lang="ts">
-import ExcalidrawBoard from './components/ExcalidrawBoard.vue';
-</script>
-
-<style scoped>
-.excaliboard {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-</style>

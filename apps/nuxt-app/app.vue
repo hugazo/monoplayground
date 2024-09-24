@@ -1,10 +1,8 @@
 <template>
   <div>
     <NuxtRouteAnnouncer />
-    <HelloWorld />
+    <NuxtPage />
   </div>
 </template>
 
-<script lang="ts">
-const _hi = 'hi';
-</script>
+<script lang="ts"></script>

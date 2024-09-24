@@ -2,7 +2,6 @@
 import { nextTick, onMounted, ref } from 'vue';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import type { Ref } from 'vue';
 import type { ExcalidrawProps } from '@excalidraw/excalidraw/types/types';
 
 const props = defineProps<ExcalidrawProps>();
