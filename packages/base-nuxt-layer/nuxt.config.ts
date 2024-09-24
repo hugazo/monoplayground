@@ -3,11 +3,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: [
-    '@nuxt/eslint',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
-  ],
+  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@nuxtjs/color-mode', 'shadcn-nuxt'],
   eslint: {
     config: {
       stylistic: {
@@ -15,5 +11,9 @@ export default defineNuxtConfig({
         semi: true,
       },
     },
+  },
+  shadcn: {
+    prefix: '',
+    componentDir: './components/ui',
   },
 });
