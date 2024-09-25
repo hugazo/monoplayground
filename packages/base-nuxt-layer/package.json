@@ -18,6 +18,8 @@
     "@nuxtjs/color-mode": "^3.5.1",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/nuxt": "^11.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "eslint": "^9.11.1",

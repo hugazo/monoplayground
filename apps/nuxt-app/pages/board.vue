@@ -11,13 +11,21 @@
 import type { AppState, BinaryFiles } from '@excalidraw/excalidraw/types/types';
 import type { ExcalidrawElement } from '@excalidraw/excalidraw/types/element/types';
 
-function handleOnChange(
+const logChange = (
   elements: readonly ExcalidrawElement[],
   state: AppState,
-  _files: BinaryFiles,
-) {
-  console.log('Board Updated:', elements, state);
-}
+  files: BinaryFiles,
+) => {
+  // TODO: Implement the public method to save the data
+  console.log('elements', elements);
+  console.log('state', state);
+  console.log('files', files);
+};
+
+const waitTime = 1000;
+const maxWait = 3000;
+
+const handleOnChange = useDebounceFn(logChange, waitTime, { maxWait });
 </script>
 
 <style scoped>
