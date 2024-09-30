@@ -5,7 +5,7 @@
   "main": "./nuxt.config.ts",
   "scripts": {
     "dev": "nuxi dev",
-    " dev:prepare": "nuxt prepare",
+    "dev:prepare": "nuxt prepare",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -16,7 +16,7 @@
     "@excalidraw/excalidraw": "^0.17.6",
     "@nuxt/eslint": "latest",
     "@nuxtjs/color-mode": "^3.5.1",
-    "@types/react": "^18.3.8",
+    "@types/react": "^18.3.10",
     "@types/react-dom": "^18.3.0",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
@@ -35,7 +35,7 @@
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.6.2",
-    "vite": "^5.4.7",
+    "vite": "^5.4.8",
     "vue": "latest"
   },
   "devDependencies": {
