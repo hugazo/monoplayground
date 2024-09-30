@@ -10,9 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@monoplayground/base-layer": "workspace:^",
-    "nuxt": "^3.13.2",
-    "vue": "latest",
-    "vue-router": "latest"
+    "@monoplayground/base-layer": "workspace:^"
   }
 }
