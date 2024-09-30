@@ -20,16 +20,19 @@ export default defineNuxtConfig({
   css: [
     join(currentDir, './assets/css/tailwind.css'),
   ],
-  components: [
-    {
-      path: join(currentDir, './components'),
-      extensions: ['.vue'],
+  hooks: {
+    'components:dirs': (dirs) => {
+      dirs.unshift({
+        path: join(currentDir, './components/ui'),
+        prefix: 'Ui',
+        extensions: ['.vue'],
+      });
+      dirs.unshift({
+        path: join(currentDir, './components'),
+        extensions: ['.vue'],
+      });
     },
-    {
-      path: join(currentDir, './components/ui'),
-      extensions: ['.vue'],
-    },
-  ],
+  },
   eslint: {
     config: {
       stylistic: {
