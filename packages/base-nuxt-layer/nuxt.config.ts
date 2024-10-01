@@ -48,4 +48,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: './assets/css/tailwind.css',
   },
+  colorMode: {
+    classSuffix: '',
+  },
 });
