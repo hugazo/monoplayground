@@ -1,7 +1,7 @@
 <template>
   <div class="main-wrapper">
     <ExcalidrawBoard
-      theme="dark"
+      :theme="getTheme"
       :on-change="handleOnChange"
     />
   </div>
@@ -10,6 +10,12 @@
 <script lang="ts" setup>
 import type { AppState, BinaryFiles } from '@excalidraw/excalidraw/types/types';
 import type { ExcalidrawElement } from '@excalidraw/excalidraw/types/element/types';
+
+const theme = useColorMode();
+
+const getTheme = computed(() => {
+  return theme.value === 'dark' ? 'dark' : 'light';
+});
 
 const logChange = (
   elements: readonly ExcalidrawElement[],

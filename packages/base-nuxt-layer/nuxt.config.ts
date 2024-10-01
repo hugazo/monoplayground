@@ -8,25 +8,15 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ['@nuxt/eslint',
+
+  modules: [
+    '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/color-mode',
     'shadcn-nuxt',
     '@vueuse/nuxt',
   ],
-  alias: {
-    '~': currentDir,
-  },
-  css: [
-    join(currentDir, './assets/css/tailwind.css'),
-  ],
   hooks: {
     'components:dirs': (dirs) => {
-      dirs.unshift({
-        path: join(currentDir, './components/ui'),
-        prefix: 'Ui',
-        extensions: ['.vue'],
-      });
       dirs.unshift({
         path: join(currentDir, './components'),
         extensions: ['.vue'],
@@ -43,12 +33,10 @@ export default defineNuxtConfig({
   },
   shadcn: {
     prefix: '',
-    componentDir: './components/ui',
+    componentDir: './components',
   },
   tailwindcss: {
     cssPath: './assets/css/tailwind.css',
   },
-  colorMode: {
-    classSuffix: '',
-  },
+  compatibilityDate: '2024-10-01',
 });
