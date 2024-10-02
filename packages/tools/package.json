@@ -1,0 +1,19 @@
+{
+  "name": "@monoplayground/tools",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "monoplayground": "workspace:^",
+    "@nuxt/eslint": "^0.5.7"
+  }
+}
