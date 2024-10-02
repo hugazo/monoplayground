@@ -1,7 +1,4 @@
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'node:path';
-
-const currentDir = dirname(fileURLToPath(import.meta.url));
+import { createResolver } from "nuxt/kit";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -17,8 +14,9 @@ export default defineNuxtConfig({
   ],
   hooks: {
     'components:dirs': (dirs) => {
+      const { resolve } = createResolver(import.meta.url)
       dirs.unshift({
-        path: join(currentDir, './components'),
+        path: resolve('./components'),
         extensions: ['.vue'],
       });
     },
@@ -33,7 +31,7 @@ export default defineNuxtConfig({
   },
   shadcn: {
     prefix: '',
-    componentDir: './components',
+    componentDir: './components/ui',
   },
   tailwindcss: {
     cssPath: './assets/css/tailwind.css',

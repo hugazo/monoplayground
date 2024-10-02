@@ -3,7 +3,3 @@
     <ExcalidrawBoard />
   </div>
 </template>
-
-<script lang="ts" setup>
-import ExcalidrawBoard from "./components/ExcalidrawBoard.vue";
-</script>
