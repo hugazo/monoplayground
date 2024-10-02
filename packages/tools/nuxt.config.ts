@@ -11,5 +11,4 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxt/eslint'],
   compatibilityDate: '2024-10-02',
-
 })

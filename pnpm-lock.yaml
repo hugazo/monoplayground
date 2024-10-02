@@ -35,9 +35,9 @@ importers:
       '@excalidraw/excalidraw':
         specifier: ^0.17.6
         version: 0.17.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@nuxt/eslint':
-        specifier: latest
-        version: 0.5.7(eslint@9.11.1(jiti@2.0.0))(magicast@0.3.5)(rollup@4.22.5)(typescript@5.6.2)(vite@5.4.8(@types/node@22.5.5)(sass@1.51.0)(terser@5.32.0))
+      '@monoplayground/tools':
+        specifier: workspace:^
+        version: link:../tools
       '@nuxtjs/color-mode':
         specifier: ^3.5.1
         version: 3.5.1(magicast@0.3.5)(rollup@4.22.5)
@@ -59,9 +59,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      eslint:
-        specifier: ^9.11.1
-        version: 9.11.1(jiti@2.0.0)
       lucide-vue-next:
         specifier: ^0.445.0
         version: 0.445.0(vue@3.5.10(typescript@5.6.2))
@@ -93,6 +90,17 @@ importers:
       '@nuxtjs/tailwindcss':
         specifier: ^6.12.1
         version: 6.12.1(magicast@0.3.5)(rollup@4.22.5)
+
+  packages/models: {}
+
+  packages/tools:
+    dependencies:
+      '@nuxt/eslint':
+        specifier: ^0.5.7
+        version: 0.5.7(eslint@9.11.1(jiti@2.0.0))(magicast@0.3.5)(rollup@4.22.5)(typescript@5.6.2)(vite@5.4.8(@types/node@22.5.5)(sass@1.51.0)(terser@5.32.0))
+      monoplayground:
+        specifier: workspace:^
+        version: link:../..
 
   prisma:
     dependencies:

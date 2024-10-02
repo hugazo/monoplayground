@@ -5,9 +5,10 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-
+  extends: [
+    '@monoplayground/tools'
+  ],
   modules: [
-    '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@vueuse/nuxt',
@@ -19,14 +20,6 @@ export default defineNuxtConfig({
         path: resolve('./components'),
         extensions: ['.vue'],
       });
-    },
-  },
-  eslint: {
-    config: {
-      stylistic: {
-        // Improves readability on multi line nested functions such as TRPC
-        semi: true,
-      },
     },
   },
   shadcn: {
