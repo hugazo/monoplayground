@@ -26,11 +26,22 @@ importers:
 
   apps/nuxt-app:
     dependencies:
-      '@monoplayground/base-layer':
+      '@monoplayground/ui':
         specifier: workspace:^
-        version: link:../../packages/base-nuxt-layer
+        version: link:../../packages/ui
 
-  packages/base-nuxt-layer:
+  packages/models: {}
+
+  packages/tools:
+    dependencies:
+      '@nuxt/eslint':
+        specifier: ^0.5.7
+        version: 0.5.7(eslint@9.11.1(jiti@2.0.0))(magicast@0.3.5)(rollup@4.22.5)(typescript@5.6.2)(vite@5.4.8(@types/node@22.5.5)(sass@1.51.0)(terser@5.32.0))
+      monoplayground:
+        specifier: workspace:^
+        version: link:../..
+
+  packages/ui:
     dependencies:
       '@excalidraw/excalidraw':
         specifier: ^0.17.6
@@ -90,17 +101,6 @@ importers:
       '@nuxtjs/tailwindcss':
         specifier: ^6.12.1
         version: 6.12.1(magicast@0.3.5)(rollup@4.22.5)
-
-  packages/models: {}
-
-  packages/tools:
-    dependencies:
-      '@nuxt/eslint':
-        specifier: ^0.5.7
-        version: 0.5.7(eslint@9.11.1(jiti@2.0.0))(magicast@0.3.5)(rollup@4.22.5)(typescript@5.6.2)(vite@5.4.8(@types/node@22.5.5)(sass@1.51.0)(terser@5.32.0))
-      monoplayground:
-        specifier: workspace:^
-        version: link:../..
 
   prisma:
     dependencies:
