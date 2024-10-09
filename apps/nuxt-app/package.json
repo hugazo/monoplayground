@@ -10,6 +10,6 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@monoplayground/base-layer": "workspace:^"
+    "@monoplayground/ui": "workspace:^"
   }
 }
