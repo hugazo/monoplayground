@@ -1,4 +1,4 @@
-import { createResolver } from "nuxt/kit";
+import { createResolver } from 'nuxt/kit';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     enabled: true,
   },
   extends: [
-    '@monoplayground/tools'
+    '@monoplayground/tools',
   ],
   modules: [
     '@nuxtjs/tailwindcss',
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
   ],
   hooks: {
     'components:dirs': (dirs) => {
-      const { resolve } = createResolver(import.meta.url)
+      const { resolve } = createResolver(import.meta.url);
       dirs.unshift({
         path: resolve('./components'),
         extensions: ['.vue'],
