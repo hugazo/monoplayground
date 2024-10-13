@@ -10,6 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@monoplayground/ui": "workspace:^"
+    "@monoplayground/ui": "workspace:^",
+    "@trpc/client": "^10.45.2",
+    "@trpc/server": "^10.45.2",
+    "trpc-nuxt": "^0.10.22",
+    "zod": "^3.23.8"
   }
 }

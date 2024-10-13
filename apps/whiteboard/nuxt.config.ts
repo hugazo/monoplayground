@@ -4,5 +4,8 @@ export default defineNuxtConfig({
     '@monoplayground/ui',
   ],
   devtools: { enabled: true },
+  build: {
+    transpile: ['trpc-nuxt'],
+  },
   compatibilityDate: '2024-09-24',
 });
