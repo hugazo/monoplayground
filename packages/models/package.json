@@ -1,12 +1,21 @@
 {
-  "name": "packages",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@monoplayground/models",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nuxi dev",
+    "dev:prepare": "nuxt prepare",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@monoplayground/db": "workspace:^",
+    "@monoplayground/models": "link:",
+    "@monoplayground/tools": "workspace:^",
+    "monoplayground": "workspace:^"
+  }
 }
