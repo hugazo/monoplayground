@@ -17,7 +17,6 @@ model Board {
   id        String   @id @default(cuid())
   title     String
   data      Json?
-  state     Json?
   files     Json?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
