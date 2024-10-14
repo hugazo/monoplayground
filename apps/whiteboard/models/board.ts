@@ -12,6 +12,14 @@ export const newBoard = async (title: string) => {
   return board;
 };
 
+export const deleteBoard = async (id: string) => {
+  await prismaClient.board.delete({
+    where: {
+      id,
+    },
+  });
+};
+
 export const getBoards = async () => {
   const boards = await prismaClient.board.findMany({
     select: {
@@ -23,7 +31,7 @@ export const getBoards = async () => {
 };
 
 export const updateBoard = async (
-  id: string, title: string,
+  id: string,
   data: ExcalidrawElement[],
   files: BinaryFiles,
 ) => {
@@ -32,7 +40,6 @@ export const updateBoard = async (
       id,
     },
     data: {
-      title,
       data,
       files,
     },
