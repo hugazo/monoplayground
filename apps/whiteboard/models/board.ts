@@ -1,7 +1,16 @@
 import prismaClient from '@monoplayground/db';
+import type { Prisma } from '@monoplayground/db';
 
-import type { BinaryFiles } from '@excalidraw/excalidraw/types/types';
-import type { ExcalidrawElement } from '@excalidraw/excalidraw/types/element/types';
+// Note: These are the functions that are going to be called inside the TRPC context
+// Export the default interface to use as reference in the TRPC Server Side
+export interface Board {
+  id: string;
+  title: string;
+  data?: Prisma.JsonArray;
+  files?: Prisma.JsonObject;
+  createdAt?: Date;
+  updatedAt?: Date;
+}
 
 export const newBoard = async (title: string) => {
   const board = await prismaClient.board.create({
@@ -9,15 +18,18 @@ export const newBoard = async (title: string) => {
       title,
     },
   });
-  return board;
+  return board as Board;
 };
 
 export const deleteBoard = async (id: string) => {
-  await prismaClient.board.delete({
+  const result = await prismaClient.board.delete({
     where: {
       id,
     },
   });
+  return {
+    id: result.id,
+  };
 };
 
 export const getBoards = async () => {
@@ -27,13 +39,13 @@ export const getBoards = async () => {
       title: true,
     },
   });
-  return boards;
+  return boards as Board[];
 };
 
 export const updateBoard = async (
   id: string,
-  data: ExcalidrawElement[],
-  files: BinaryFiles,
+  data: Prisma.JsonArray,
+  files: Prisma.JsonObject,
 ) => {
   const board = await prismaClient.board.update({
     where: {
@@ -44,7 +56,7 @@ export const updateBoard = async (
       files,
     },
   });
-  return board;
+  return board as Board;
 };
 
 export const getBoard = async (id: string) => {
@@ -53,5 +65,5 @@ export const getBoard = async (id: string) => {
       id,
     },
   });
-  return board;
+  return board as Board;
 };

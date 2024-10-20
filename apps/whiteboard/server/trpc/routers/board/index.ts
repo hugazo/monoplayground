@@ -15,10 +15,10 @@ export const boardRouter = router({
     )
     .mutation(async ({ input }) => {
       const { id } = input;
-      await deleteBoard(id);
-      return { id };
+      const result = await deleteBoard(id);
+      return result;
     }),
-  get: publicProcedure
+  getBoard: publicProcedure
     .input(
       z.object({
         id: z.string(),
@@ -29,7 +29,7 @@ export const boardRouter = router({
       const board = await getBoard(id);
       return board;
     }),
-  update: publicProcedure
+  updateBoard: publicProcedure
     .input(
       z.object({
         id: z.string(),
