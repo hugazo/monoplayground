@@ -28,7 +28,8 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute();
 const boardStore = board();
 
-await useAsyncData('data', () => boardStore.getBoardData());
+useAsyncData('data', () => boardStore.getBoardData(route.params.id as string));
 </script>

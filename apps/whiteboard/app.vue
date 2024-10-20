@@ -7,4 +7,5 @@
 
 <script setup lang="ts">
 useColorMode();
+useRoute();
 </script>

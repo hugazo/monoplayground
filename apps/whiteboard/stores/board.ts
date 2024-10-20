@@ -17,12 +17,11 @@ export interface BoardResponse extends Omit<Board, 'data' | 'files'> {
 export default defineStore('board', () => {
   // App helpers
   const { $client } = useNuxtApp();
-  const route = useRoute();
   const theme = useColorMode();
-  // Params
-  const boardId = route.params.id as string;
   // Loading status for the board
   const loading = ref(false);
+
+  const boardId = ref<string | null>(null);
 
   // Auto save status
   const autoSave = ref(false);
@@ -30,15 +29,16 @@ export default defineStore('board', () => {
   const boardData = ref<BoardResponse | null>(null);
   const initialBoardData = ref<BoardInitialData>({ elements: [], files: {} });
 
-  const getBoardData = async () => {
+  const getBoardData = async (id: string) => {
     loading.value = true;
-    const queryResult = await $client.board.getBoard.query({ id: boardId });
+    boardId.value = id;
+    const queryResult = await $client.board.getBoard.query({ id });
     boardData.value = queryResult as unknown as BoardResponse;
     // Fills the initial board data if there are elements or files
     if (boardData.value.data || boardData.value.files) {
       initialBoardData.value = {
         elements: queryResult.data as unknown as ExcalidrawElement[],
-        files: queryResult.files as unknown as BinaryFiles,
+        files: queryResult.files as BinaryFiles,
       };
     }
     loading.value = false;
@@ -58,7 +58,7 @@ export default defineStore('board', () => {
     loading.value = true;
     const data = boardData.value as BoardResponse;
     $client.board.updateBoard.mutate({
-      id: boardId,
+      id: boardId.value as string,
       data: data.data,
       files: data.files,
     });
