@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@monoplayground/ui": "workspace:^",
+    "@pinia/nuxt": "^0.5.5",
     "@trpc/client": "^10.45.2",
     "@trpc/server": "^10.45.2",
     "trpc-nuxt": "^0.10.22",
