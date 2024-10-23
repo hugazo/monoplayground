@@ -31,5 +31,9 @@
 const route = useRoute();
 const boardStore = board();
 
-useAsyncData('data', () => boardStore.getBoardData(route.params.id as string));
+await useAsyncData('data', () => boardStore.getBoardData(route.params.id as string));
+
+onBeforeUnmount(() => {
+  boardStore.clearBoard();
+});
 </script>

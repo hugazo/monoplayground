@@ -38,6 +38,7 @@ export default defineStore('board', () => {
     if (boardData.value.data || boardData.value.files) {
       initialBoardData.value = {
         elements: queryResult.data as unknown as ExcalidrawElement[],
+        // tslint:disable-next-line: no-unsafe-any
         files: queryResult.files as BinaryFiles,
       };
     }
@@ -85,6 +86,11 @@ export default defineStore('board', () => {
     };
   };
 
+  const clearBoard = () => {
+    boardData.value = null;
+    initialBoardData.value = { elements: [], files: {} };
+  };
+
   return {
     boardId,
     loading,
@@ -96,5 +102,6 @@ export default defineStore('board', () => {
     handleBoardUpdate,
     updateBoard,
     updateBoardDebounced,
+    clearBoard,
   };
 });
