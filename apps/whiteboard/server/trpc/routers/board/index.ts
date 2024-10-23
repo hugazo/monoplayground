@@ -1,11 +1,10 @@
 import { z } from 'zod';
 import { publicProcedure, router } from '~/server/trpc/trpc';
-import { getBoards, deleteBoard, getBoard, updateBoard } from '~/models/board';
 
 export const boardRouter = router({
   getAllBoards: publicProcedure
-    .query(async () => {
-      return await getBoards();
+    .query(async ({ ctx }) => {
+      return await ctx.models.board.getBoards();
     }),
   deleteBoard: publicProcedure
     .input(
@@ -13,9 +12,10 @@ export const boardRouter = router({
         id: z.string(),
       }),
     )
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const { id } = input;
-      const result = await deleteBoard(id);
+      // const result = await deleteBoard(id);
+      const result = await ctx.models.board.deleteBoard(id);
       return result;
     }),
   getBoard: publicProcedure
@@ -24,9 +24,9 @@ export const boardRouter = router({
         id: z.string(),
       }),
     )
-    .query(async ({ input }) => {
+    .query(async ({ input, ctx }) => {
       const { id } = input;
-      const board = await getBoard(id);
+      const board = await ctx.models.board.getBoard(id);
       return board;
     }),
   updateBoard: publicProcedure
@@ -37,9 +37,9 @@ export const boardRouter = router({
         files: z.any(),
       }),
     )
-    .mutation(async ({ input }) => {
+    .mutation(async ({ input, ctx }) => {
       const { id, data, files } = input;
-      const board = await updateBoard(id, data, files);
+      const board = await ctx.models.board.updateBoard(id, data, files);
       return board;
     }),
 });
