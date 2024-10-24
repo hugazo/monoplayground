@@ -11,5 +11,5 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2024-09-24',
-  modules: ['@pinia/nuxt'],
+  modules: ['@pinia/nuxt', 'nuxt-auth-utils'],
 });

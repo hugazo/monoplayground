@@ -38,7 +38,7 @@ export default defineStore('board', () => {
     if (boardData.value.data || boardData.value.files) {
       initialBoardData.value = {
         elements: queryResult.data as unknown as ExcalidrawElement[],
-        // tslint:disable-next-line: no-unsafe-any
+        // tslint:disable-next-line
         files: queryResult.files as BinaryFiles,
       };
     }

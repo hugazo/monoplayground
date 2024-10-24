@@ -15,6 +15,7 @@
     "@pinia/nuxt": "^0.5.5",
     "@trpc/client": "^10.45.2",
     "@trpc/server": "^10.45.2",
+    "nuxt-auth-utils": "^0.5.0",
     "trpc-nuxt": "^0.10.22",
     "zod": "^3.23.8"
   }
