@@ -1,5 +1,6 @@
 <template>
   <div class="h-screen">
+    <UiToastToaster />
     <NuxtRouteAnnouncer />
     <NuxtPage />
   </div>

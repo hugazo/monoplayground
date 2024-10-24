@@ -20,6 +20,7 @@
 <script setup lang="ts">
 import * as z from 'zod';
 import type { FormActions } from 'vee-validate';
+import { useToast } from '@monoplayground/ui/components/ui/toast';
 import { userForm } from '~/models/user';
 
 const schema = userForm.extend({
@@ -49,6 +50,8 @@ const { $client } = useNuxtApp();
 
 type Schema = z.infer<typeof schema>;
 
+const { toast } = useToast();
+
 const onSubmit = async (values: Schema, actions: FormActions<Schema>) => {
   // Manual validation of password confirmation on submit
   if (values.password !== values.passwordConfirmation) {
@@ -64,6 +67,8 @@ const onSubmit = async (values: Schema, actions: FormActions<Schema>) => {
     password,
   });
   actions.resetForm();
-  console.log('Form Submited by Default Function', result);
+  toast({
+    description: `User ${result.email} registered successfully`,
+  });
 };
 </script>
