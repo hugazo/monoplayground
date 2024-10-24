@@ -7,7 +7,7 @@
         </UiCardTitle>
       </UiCardHeader>
       <UiCardContent>
-        <FormsDynamicForm
+        <DynamicForm
           :schema="schema"
           :submit-handler="onSubmit"
           :options
