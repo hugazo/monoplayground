@@ -3,13 +3,16 @@ import { toTypedSchema } from '@vee-validate/zod';
 import {
   FormField as UiFormField,
 } from '@monoplayground/ui/components/ui/form';
-import { Form, useForm, defineRule } from 'vee-validate';
+import type { FormActions } from 'vee-validate';
+import { useForm, defineRule } from 'vee-validate';
 import type * as z from 'zod';
+
+type FormSchema = z.infer<typeof props.schema>;
 
 const props = defineProps<{
   schema: z.ZodTypeAny;
   submitHandler?: {
-    (values: z.infer<typeof props.schema>): Promise<void>;
+    (values: FormSchema, actions: FormActions<FormSchema>): Promise<void>;
   };
   options: Record<string, Record<string, string>>;
 }>();
@@ -30,13 +33,16 @@ defineRule('password-confirmed', (value: string, [target]: string) => {
   }
   return true;
 });
+
+const onSubmit = form.handleSubmit(async (values, actions: FormActions<typeof form.values>) => {
+  if (props.submitHandler) {
+    await props.submitHandler(values, actions);
+  }
+});
 </script>
 
 <template>
-  <Form
-    :form
-    @submit="props.submitHandler"
-  >
+  <form @submit="onSubmit">
     <UiFormField
       v-for="field in values"
       v-slot="{ componentField }"
@@ -65,18 +71,18 @@ defineRule('password-confirmed', (value: string, [target]: string) => {
     <div class="mt-4 flex justify-around">
       <UiButton
         class="w-20 mx-2"
-        :disabled="form.isSubmitting"
         type="submit"
+        :disabled="form.isSubmitting"
       >
-        submit
+        Submit
       </UiButton>
       <UiButton
         class="w-20 mx-2"
         :disabled="form.isSubmitting"
+        @click="form.resetForm"
       >
-        <!-- TODO: implement the reset logic -->
         Reset
       </UiButton>
     </div>
-  </Form>
+  </form>
 </template>
