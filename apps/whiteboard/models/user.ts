@@ -1,4 +1,5 @@
 import prismaClient from '@monoplayground/db';
+import { z } from 'zod';
 
 export interface User {
   id: string;
@@ -7,6 +8,11 @@ export interface User {
   createdAt?: Date;
   updatedAt?: Date;
 }
+
+export const userForm = z.object({
+  email: z.string(),
+  password: z.string(),
+});
 
 export const registerUser = async (email: string, password: string) => {
   const user = await prismaClient.user.create({

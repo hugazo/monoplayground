@@ -20,10 +20,9 @@
 <script setup lang="ts">
 import * as z from 'zod';
 import type { FormActions } from 'vee-validate';
+import { userForm } from '~/models/user';
 
-const schema = z.object({
-  email: z.string().email(),
-  password: z.string().min(6),
+const schema = userForm.extend({
   passwordConfirmation: z.string().min(6),
 });
 
