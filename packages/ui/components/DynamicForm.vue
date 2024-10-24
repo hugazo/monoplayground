@@ -34,7 +34,7 @@ defineRule('password-confirmed', (value: string, [target]: string) => {
   return true;
 });
 
-const onSubmit = form.handleSubmit(async (values, actions: FormActions<typeof form.values>) => {
+const onSubmit = form.handleSubmit(async (values: FormSchema, actions: FormActions<typeof form.values>) => {
   if (props.submitHandler) {
     await props.submitHandler(values, actions);
   }
