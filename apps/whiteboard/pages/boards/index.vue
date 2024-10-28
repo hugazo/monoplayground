@@ -38,13 +38,16 @@ const { $client } = useNuxtApp();
 const loading = ref(false);
 const router = useRouter();
 
-const boards = ref(await $client.board.getAllBoards.query());
+// Fetchs all boards server side
+const { data: boards } = useAsyncData('boards', async () => await $client.board.getAllBoards.query());
 
 const deleteBoard = async (id: string) => {
   try {
     loading.value = true;
     await $client.board.deleteBoard.mutate({ id });
-    boards.value = boards.value.filter(board => board.id !== id);
+    if (boards.value) {
+      boards.value = boards.value.filter(board => board.id !== id);
+    }
   }
   finally {
     loading.value = false;
