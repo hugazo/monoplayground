@@ -26,3 +26,30 @@ export const registerUser = async (email: string, password: string) => {
   });
   return user as User;
 };
+
+export const getUserByEmail = async (email: string) => {
+  const user = await prismaClient.user.findUnique({
+    where: {
+      email,
+    },
+    omit: {
+      createdAt: true,
+      updatedAt: true,
+    },
+  });
+  return user as User;
+};
+
+export const getUserById = async (id: string) => {
+  const user = await prismaClient.user.findUnique({
+    where: {
+      id,
+    },
+    omit: {
+      createdAt: true,
+      password_hash: true,
+      updatedAt: true,
+    },
+  });
+  return user as User;
+};

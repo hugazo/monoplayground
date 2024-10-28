@@ -1,8 +1,8 @@
-import { publicProcedure, router } from '~/server/trpc/trpc';
+import { router, signedOutProcedure } from '~/server/trpc/trpc';
 import { userForm } from '~/models/user';
 
 export const userRouter = router({
-  create: publicProcedure
+  create: signedOutProcedure
     .input(userForm)
     .mutation(async ({ input, ctx }) => {
       const { email, password } = input;

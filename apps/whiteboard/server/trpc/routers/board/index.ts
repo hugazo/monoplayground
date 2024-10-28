@@ -1,12 +1,12 @@
 import { z } from 'zod';
-import { publicProcedure, router } from '~/server/trpc/trpc';
+import { router, signedInProcedure } from '~/server/trpc/trpc';
 
 export const boardRouter = router({
-  getAllBoards: publicProcedure
+  getAllBoards: signedInProcedure
     .query(async ({ ctx }) => {
       return await ctx.models.board.getBoards();
     }),
-  deleteBoard: publicProcedure
+  deleteBoard: signedInProcedure
     .input(
       z.object({
         id: z.string(),
@@ -18,7 +18,7 @@ export const boardRouter = router({
       const result = await ctx.models.board.deleteBoard(id);
       return result;
     }),
-  getBoard: publicProcedure
+  getBoard: signedInProcedure
     .input(
       z.object({
         id: z.string(),
@@ -29,7 +29,7 @@ export const boardRouter = router({
       const board = await ctx.models.board.getBoard(id);
       return board;
     }),
-  updateBoard: publicProcedure
+  updateBoard: signedInProcedure
     .input(
       z.object({
         id: z.string(),
