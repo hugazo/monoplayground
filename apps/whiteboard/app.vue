@@ -10,3 +10,9 @@
 useColorMode();
 useRoute();
 </script>
+
+<style>
+:root {
+  font-family: 'Noto Sans', sans-serif;
+}
+</style>
