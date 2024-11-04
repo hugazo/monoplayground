@@ -96,6 +96,9 @@ importers:
       '@monoplayground/tools':
         specifier: workspace:^
         version: link:../tools
+      '@monoplayground/ui':
+        specifier: 'link:'
+        version: 'link:'
       '@nuxtjs/color-mode':
         specifier: ^3.5.1
         version: 3.5.2(magicast@0.3.5)(rollup@4.24.3)
