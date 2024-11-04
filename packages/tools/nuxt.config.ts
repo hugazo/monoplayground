@@ -2,6 +2,9 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
+  modules: [
+    '@vueuse/nuxt'
+  ],
   eslint: {
     config: {
       stylistic: {

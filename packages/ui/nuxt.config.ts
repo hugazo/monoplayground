@@ -11,7 +11,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
-    '@vueuse/nuxt',
   ],
   hooks: {
     'components:dirs': (dirs) => {

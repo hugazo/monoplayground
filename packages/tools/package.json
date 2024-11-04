@@ -13,7 +13,11 @@
   },
   "license": "ISC",
   "dependencies": {
-    "monoplayground": "workspace:^",
-    "@nuxt/eslint": "^0.5.7"
+    "@nuxt/eslint": "^0.5.7",
+    "monoplayground": "workspace:^"
+  },
+  "devDependencies": {
+    "@vueuse/core": "^11.1.0",
+    "@vueuse/nuxt": "^11.1.0"
   }
 }
