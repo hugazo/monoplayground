@@ -1,11 +1,11 @@
 <template>
   <div>
     <h1>Boards Index</h1>
-    <div class="w-full flex items-center">
+    <div class="w-full flex justify-around">
       <UiCard
         v-for="board in boards"
         :key="board.id"
-        class="m-0 md:m-4 w-full md:w-72"
+        class="m-0 my-4 w-full md:w-72 md:m-4"
       >
         <UiCardHeader class="p-4">
           <UiCardTitle>
