@@ -15,7 +15,8 @@
   "dependencies": {
     "@nuxt/eslint": "^0.5.7",
     "@nuxt/fonts": "^0.10.2",
-    "monoplayground": "workspace:^"
+    "monoplayground": "workspace:^",
+    "nuxt-icons": "^3.2.1"
   },
   "devDependencies": {
     "@vueuse/core": "^11.1.0",

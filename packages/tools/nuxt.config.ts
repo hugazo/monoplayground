@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true,
   },
-  modules: ['@vueuse/nuxt', '@nuxt/fonts', '@nuxt/eslint'],
+  modules: ['@vueuse/nuxt', '@nuxt/fonts', '@nuxt/eslint', 'nuxt-icons'],
   eslint: {
     config: {
       stylistic: {
@@ -11,4 +11,4 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2024-10-02',
-})
+});

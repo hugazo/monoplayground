@@ -77,6 +77,9 @@ importers:
       monoplayground:
         specifier: workspace:^
         version: link:../..
+      nuxt-icons:
+        specifier: ^3.2.1
+        version: 3.2.1(magicast@0.3.5)(rollup@4.24.0)
     devDependencies:
       '@vueuse/core':
         specifier: ^11.1.0
@@ -3415,6 +3418,9 @@ packages:
         optional: true
       '@simplewebauthn/server':
         optional: true
+
+  nuxt-icons@3.2.1:
+    resolution: {integrity: sha512-trvAFq9oWYwWEQ0qZDHVxvLK+TwOdFnoXYOXQvN1CRUlp1DBJdxC8vXO3mED2Kb+Suag+bpWLC6eXGrRwhfffQ==}
 
   nuxt@3.13.2:
     resolution: {integrity: sha512-Bjc2qRsipfBhjXsBEJCN+EUAukhdgFv/KoIR5HFB2hZOYRSqXBod3oWQs78k3ja1nlIhAEdBG533898KJxUtJw==}
@@ -8446,6 +8452,15 @@ snapshots:
     transitivePeerDependencies:
       - argon2
       - bcrypt
+      - magicast
+      - rollup
+      - supports-color
+      - webpack-sources
+
+  nuxt-icons@3.2.1(magicast@0.3.5)(rollup@4.24.0):
+    dependencies:
+      '@nuxt/kit': 3.13.2(magicast@0.3.5)(rollup@4.24.0)
+    transitivePeerDependencies:
       - magicast
       - rollup
       - supports-color
