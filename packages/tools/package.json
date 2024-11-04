@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@nuxt/eslint": "^0.5.7",
+    "@nuxt/fonts": "^0.10.2",
     "monoplayground": "workspace:^"
   },
   "devDependencies": {
