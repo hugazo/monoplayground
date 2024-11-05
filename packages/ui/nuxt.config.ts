@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
+    '@nuxtjs/storybook',
   ],
   hooks: {
     'components:dirs': (dirs) => {
@@ -20,6 +21,10 @@ export default defineNuxtConfig({
         extensions: ['.vue'],
       });
     },
+  },
+  storybook: {
+    // Disabled because packages that import the UI folder won't run storybook on dev
+    enabled: false,
   },
   shadcn: {
     prefix: '',

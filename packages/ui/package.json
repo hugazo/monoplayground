@@ -4,12 +4,14 @@
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
   "scripts": {
-    "dev": "nuxt dev",
+    "dev": "pnpm storybook",
     "dev:prepare": "nuxt prepare",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "component:add": "npx shadcn-vue@latest add"
+    "component:add": "npx shadcn-vue@latest add",
+    "storybook": "storybook dev --port 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@monoplayground/tools": "workspace:^",
@@ -21,6 +23,7 @@
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.445.0",
     "monoplayground": "workspace:^",
+    "nuxt": "3.11.2",
     "radix-vue": "^1.9.6",
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.5.2",
@@ -30,6 +33,17 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.1"
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "storybook": "^8.4.1",
+    "@types/node": "^18.17.5",
+    "@storybook/vue3": "^8.4.1",
+    "@storybook-vue/nuxt": "^8.3.2",
+    "@nuxtjs/storybook": "7.0.2",
+    "@storybook/addon-links": "^8.4.1",
+    "@storybook/builder-vite": "^8.4.1",
+    "@storybook/addon-essentials": "^8.4.1",
+    "@storybook/addon-interactions": "^8.4.1",
+    "@storybook/test": "^8.4.1",
+    "@storybook/blocks": "^8.4.1"
   }
 }
