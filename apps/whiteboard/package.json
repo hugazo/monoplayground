@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@monoplayground/db": "workspace:^",
+    "@monoplayground/excalidraw-nuxt": "workspace:^",
     "@monoplayground/ui": "workspace:^",
     "@pinia/nuxt": "^0.5.5",
     "@trpc/client": "^10.45.2",
