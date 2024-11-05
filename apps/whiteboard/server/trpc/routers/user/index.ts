@@ -1,5 +1,5 @@
 import { router, signedOutProcedure } from '~/server/trpc/trpc';
-import { userForm } from '~/models/user';
+import { userForm } from '~/forms/user';
 
 export const userRouter = router({
   create: signedOutProcedure

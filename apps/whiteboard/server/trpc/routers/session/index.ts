@@ -1,5 +1,5 @@
 import { router, signedInProcedure, signedOutProcedure } from '~/server/trpc/trpc';
-import { userForm } from '~/models/user';
+import { userForm } from '~/forms/user';
 
 // Session router, this handles sessions
 export const sessionRouter = router({

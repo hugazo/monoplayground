@@ -21,7 +21,7 @@
 import * as z from 'zod';
 import type { FormActions } from 'vee-validate';
 import { useToast } from '@monoplayground/ui/components/ui/toast';
-import { userForm } from '~/models/user';
+import { userForm } from '~/forms/user';
 
 const schema = userForm.extend({
   passwordConfirmation: z.string().min(6),

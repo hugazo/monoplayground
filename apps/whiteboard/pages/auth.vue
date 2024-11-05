@@ -12,7 +12,7 @@
         </UiCardHeader>
         <UiCardContent>
           <div v-if="user">
-            <p>You are logged in as {{ user?.email }}</p>
+            <p>You are logged in as {{ user }}</p>
             <UiButton @click="clear">
               Logout
             </UiButton>
@@ -33,7 +33,7 @@
 import type * as z from 'zod';
 import type { FormActions } from 'vee-validate';
 import { useToast } from '@monoplayground/ui/components/ui/toast';
-import { userForm as schema } from '~/models/user';
+import { userForm as schema } from '~/forms/user';
 
 const options = {
   email: {

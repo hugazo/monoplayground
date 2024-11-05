@@ -6,22 +6,24 @@ import type { Prisma } from '@monoplayground/db';
 export interface Board {
   id: string;
   title: string;
-  data?: Prisma.JsonArray;
-  files?: Prisma.JsonObject;
+  data?: Prisma.JsonValue;
+  files?: Prisma.JsonValue;
   createdAt?: Date;
   updatedAt?: Date;
 }
 
-export const newBoard = async (title: string) => {
+type BoardId = Pick<Board, 'id'>;
+
+export const newBoard = async (title: string): Promise<Board> => {
   const board = await prismaClient.board.create({
     data: {
       title,
     },
   });
-  return board as Board;
+  return board;
 };
 
-export const deleteBoard = async (id: string) => {
+export const deleteBoard = async (id: string): Promise<BoardId> => {
   const result = await prismaClient.board.delete({
     where: {
       id,
@@ -32,21 +34,21 @@ export const deleteBoard = async (id: string) => {
   };
 };
 
-export const getBoards = async () => {
+export const getBoards = async (): Promise<Board[]> => {
   const boards = await prismaClient.board.findMany({
     select: {
       id: true,
       title: true,
     },
   });
-  return boards as Board[];
+  return boards;
 };
 
 export const updateBoard = async (
   id: string,
   data: Prisma.JsonArray,
   files: Prisma.JsonObject,
-) => {
+): Promise<Board> => {
   const board = await prismaClient.board.update({
     where: {
       id,
@@ -56,14 +58,14 @@ export const updateBoard = async (
       files,
     },
   });
-  return board as Board;
+  return board;
 };
 
-export const getBoard = async (id: string) => {
+export const getBoard = async (id: string): Promise<Board | null> => {
   const board = await prismaClient.board.findUnique({
     where: {
       id,
     },
   });
-  return board as Board;
+  return board;
 };

@@ -1,5 +1,4 @@
 import prismaClient from '@monoplayground/db';
-import { z } from 'zod';
 
 export interface User {
   id: string;
@@ -9,12 +8,7 @@ export interface User {
   updatedAt?: Date;
 }
 
-export const userForm = z.object({
-  email: z.string(),
-  password: z.string(),
-});
-
-export const registerUser = async (email: string, password: string) => {
+export const registerUser = async (email: string, password: string): Promise<User> => {
   const user = await prismaClient.user.create({
     data: {
       email,
@@ -27,7 +21,7 @@ export const registerUser = async (email: string, password: string) => {
   return user as User;
 };
 
-export const getUserByEmail = async (email: string) => {
+export const getUserByEmail = async (email: string): Promise<User | null> => {
   const user = await prismaClient.user.findUnique({
     where: {
       email,
@@ -37,10 +31,10 @@ export const getUserByEmail = async (email: string) => {
       updatedAt: true,
     },
   });
-  return user as User;
+  return user;
 };
 
-export const getUserById = async (id: string) => {
+export const getUserById = async (id: string): Promise<User | null> => {
   const user = await prismaClient.user.findUnique({
     where: {
       id,
@@ -51,5 +45,5 @@ export const getUserById = async (id: string) => {
       updatedAt: true,
     },
   });
-  return user as User;
+  return user;
 };
