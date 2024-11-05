@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center align-center h-screen">
+  <div class="flex justify-center h-screen">
     <ExcalidrawBoard />
   </div>
 </template>

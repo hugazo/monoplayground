@@ -1,0 +1,20 @@
+{
+  "name": "@monoplayground/excalidraw-nuxt",
+  "type": "module",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "dev": "nuxt dev",
+    "dev:prepare": "nuxt prepare",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "@excalidraw/excalidraw": "^0.17.6",
+    "@monoplayground/tools": "workspace:^",
+    "@types/react": "^18.3.10",
+    "monoplayground": "workspace:^",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
