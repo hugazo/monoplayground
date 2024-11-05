@@ -10,9 +10,6 @@ export default defineNuxtConfig({
   build: {
     transpile: ['trpc-nuxt'],
   },
-  storybook: {
-    enabled: false,
-  },
 
   compatibilityDate: '2024-09-24',
   modules: ['@pinia/nuxt', 'nuxt-auth-utils'],
