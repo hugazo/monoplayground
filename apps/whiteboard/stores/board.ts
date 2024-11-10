@@ -1,7 +1,7 @@
 // Data for the boards
 import type { AppState, BinaryFiles } from '@excalidraw/excalidraw/types/types';
 import type { ExcalidrawElement } from '@excalidraw/excalidraw/types/element/types';
-import type { Board } from '~/models/board';
+import type { Board } from '@monoplayground/db/models/board';
 
 interface BoardInitialData {
   elements?: ExcalidrawElement[];

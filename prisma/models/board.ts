@@ -1,5 +1,5 @@
-import prismaClient from '@monoplayground/db';
-import type { Prisma } from '@monoplayground/db';
+import prismaClient from '../index';
+import type { Prisma } from '../index';
 
 // Note: These are the functions that are going to be called inside the TRPC context
 // Export the default interface to use as reference in the TRPC Server Side

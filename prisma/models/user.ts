@@ -1,4 +1,4 @@
-import prismaClient from '@monoplayground/db';
+import prismaClient from '../index';
 
 export interface User {
   id: string;

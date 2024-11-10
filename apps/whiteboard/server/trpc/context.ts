@@ -1,6 +1,6 @@
 import type { H3Event } from 'h3';
 import type { inferAsyncReturnType } from '@trpc/server';
-import * as models from '@/models';
+import * as models from '@monoplayground/db/models';
 import type { UserSession } from '#auth-utils';
 
 export const createContext = async (event: H3Event) => {
