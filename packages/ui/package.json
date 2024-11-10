@@ -4,19 +4,17 @@
   "version": "0.0.1",
   "main": "./nuxt.config.ts",
   "scripts": {
-    "dev": "pnpm storybook",
+    "dev": "pnpm dev",
     "dev:prepare": "nuxt prepare",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "component:add": "npx shadcn-vue@latest add",
-    "storybook": "storybook dev --port 6006",
-    "build-storybook": "storybook build"
+    "component:add": "npx shadcn-vue@latest add"
   },
   "dependencies": {
     "@monoplayground/tools": "workspace:^",
+    "@monoplayground/ui": "link:",
     "@nuxtjs/color-mode": "^3.5.1",
-    "@nuxtjs/storybook": "^8.3.2",
     "@types/react-dom": "^18.3.0",
     "@vee-validate/zod": "^4.14.4",
     "class-variance-authority": "^0.7.0",
@@ -33,17 +31,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "storybook": "^8.4.1",
-    "@types/node": "^18.17.5",
-    "@storybook/vue3": "^8.4.1",
-    "@storybook-vue/nuxt": "^8.3.2",
-    "@nuxtjs/storybook": "7.0.2",
-    "@storybook/addon-links": "^8.4.1",
-    "@storybook/builder-vite": "^8.4.1",
-    "@storybook/addon-essentials": "^8.4.1",
-    "@storybook/addon-interactions": "^8.4.1",
-    "@storybook/test": "^8.4.1",
-    "@storybook/blocks": "^8.4.1"
+    "@nuxtjs/tailwindcss": "^6.12.1"
   }
 }
