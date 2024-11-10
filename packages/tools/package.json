@@ -13,12 +13,12 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@nuxt/eslint": "^0.5.7",
-    "@nuxt/fonts": "^0.10.2",
     "monoplayground": "workspace:^",
-    "nuxt-icons": "^3.2.1"
+    "@nuxt/eslint": "^0.5.7",
+    "@nuxt/fonts": "^0.10.2"
   },
   "devDependencies": {
+    "@nuxt/icon": "^1.7.0",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0"
   }
