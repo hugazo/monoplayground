@@ -8,11 +8,7 @@ export default defineNuxtConfig({
   extends: [
     '@monoplayground/tools',
   ],
-  modules: [
-    '@nuxtjs/tailwindcss',
-    'shadcn-nuxt',
-    '@nuxtjs/storybook',
-  ],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt'],
   hooks: {
     'components:dirs': (dirs) => {
       const { resolve } = createResolver(import.meta.url);
