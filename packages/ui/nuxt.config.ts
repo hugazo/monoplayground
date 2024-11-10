@@ -18,10 +18,6 @@ export default defineNuxtConfig({
       });
     },
   },
-  storybook: {
-    // Disabled because packages that import the UI folder won't run storybook on dev
-    enabled: false,
-  },
   shadcn: {
     prefix: '',
     componentDir: './components/ui',
